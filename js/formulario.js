@@ -42,6 +42,5 @@ function validarRegistro(e) {
 
        // Enviar la peticion
        xhr.send(datos);
-
     }
 }

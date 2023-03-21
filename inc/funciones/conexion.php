@@ -4,10 +4,11 @@ $dbname = "uptask";
 $username = "root";
 $password = "root";
 
-try {
-  $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+$conn = new mysqli($host, $username, $password, $dbname);
+
+if($conn->connect_error){
+  echo $conn->connect_error;
 }
-catch(PDOException $e) {
-  echo "Error de conexión: " . $e->getMessage();
-}
+
+$conn->set_charset('utf8');
 ?>
